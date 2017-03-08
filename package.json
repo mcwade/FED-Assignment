@@ -1,0 +1,30 @@
+{
+  "name": "vice-media-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {},
+  "keywords": [
+    ""
+  ],
+  "author": "Wade Hampton",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-assetpaths": "^0.3.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-connect": "^5.0.0",
+    "gulp-csslint": "^1.0.0",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-minifier": "^0.1.4",
+    "gulp-sass": "^2.3.2",
+    "install": "^0.8.1",
+    "jshint": "^2.9.3"
+  },
+  "dependencies": {}
+}

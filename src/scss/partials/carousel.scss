@@ -1,0 +1,147 @@
+/* Carousel */
+.carousel {
+	width: 100vw;
+	min-width: $minWidth;
+	display:flex;
+	flex-flow: column;
+	overflow: hidden;
+
+	// Carousel
+	section {
+		position: relative;
+		left: 0vw;
+		min-width: $minWidth;
+		margin: 5vh 0 5vh;
+		white-space: nowrap;
+		transition: left 0.2s ease;
+		transform: translateZ(0);
+		order:1;
+
+		figure {
+			display: inline-block;
+			width: 100vw;
+			margin: 0 auto;
+
+			img {
+				width: $figWidth;
+				height: auto;
+				box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+			}
+			figcaption {
+				font-size: 12px;
+				color: #aaa;
+				text-transform: uppercase;
+				padding-top: 8px;
+
+				h2 {
+					color: $black;
+					font-size: 22px;
+					padding: 10px 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	// Carousel Indicators
+	nav {
+		display: block;
+		min-width: $minWidth;
+		box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.3);
+		overflow: hidden;
+		order:2;
+
+		ul {
+			position: relative;
+			left: 0;
+			list-style: none;
+			padding: 0;
+			margin: 3vh 0 3vh calc(50vw - 60px);
+			white-space: nowrap;
+			transition: left 0.2s ease-in-out;
+			transform: translateZ(0);
+		}
+		li {
+			position: relative;
+			display: inline-block;
+			margin: 0 36px;
+
+			i {
+				position: relative;
+				display: block;
+				width: 48px; height: 48px;
+				background: $lightGrey;
+				margin-bottom: 5px;
+				border: 1px solid $medGrey;
+				transition: all 0.3s ease;
+
+				&:hover {
+					border-color: $darkGrey;
+					background: $medGrey;
+				}
+				&:active {
+					box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+				}
+			}
+			&:before {
+				position: absolute;
+				top: 14px;
+			    left: 50%;
+				content: attr(data-index);
+			    font-family: "Helvetica Neue",helvetica;
+			    font-size: 16px;
+			    font-weight: 400;
+			    color: #fff;
+			    z-index: 1;
+			    opacity: 0;
+			    transform: translateX(-50%);
+			    transition: opacity 0.3s ease;
+			}
+			&.selected {
+				i {
+					border-color: $black;
+					background: $darkGrey;
+				}
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+
+/*****
+  RESPONSIVE STYLES
+*****/
+
+/* Medium Screens */
+@media screen and (min-width: 414px) {
+	.carousel {
+		section {
+			margin: 7vh 0;
+		}
+		nav ul {
+			margin-top: 4vh;
+		}
+	}
+}
+
+/* Larger Screens */
+@media screen and (min-width: 980px) {
+	.carousel {
+		section {
+			margin: 10vh 0;
+			order:2;
+		}
+		nav {
+			box-shadow: 0 -10px 10px 10px rgba(0,0,0,0.3);
+			overflow-x: hidden;
+			order:1;
+
+			ul {
+				margin-top: 5vh;
+			}
+		}
+	}
+}
