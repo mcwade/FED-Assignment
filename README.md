@@ -1,6 +1,6 @@
-# VICE Front-end Coding Exercise
+# Front-end Coding Exercise
 
-Below is a HTML/CSS/JS exercise that involves building out a web component, or single page app, to navigate through various VICE shows.
+Below is a HTML/CSS/JS exercise that involves building out a web component, or single page app, to navigate through various Media shows.
 
 - Use HTML5 semantic markup elements.
 - Write your CSS using a preprocessor (Sass, LESS or Stylus).
