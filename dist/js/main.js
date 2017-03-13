@@ -6,7 +6,7 @@
 			navParent,
 			caroItems,
 			navItems,
-			prevIndex = 0,
+			prevIndex = 1,
 			windowWidth,
 			_myHandler = {
 				init: function() {
@@ -44,6 +44,20 @@
 					    	that.slideCaro(p - 1)
 					    }
 				  	})
+
+				  	// Left & Right Arrow Control
+				  	document.addEventListener("keydown", function(event) {
+						switch (event.which) {
+							case 37:
+								if (prevIndex > 0) that.historyChange(prevIndex)
+								event.preventDefault();
+								break;
+							case 39:
+								if (prevIndex < 9) that.historyChange(prevIndex+2)
+								event.preventDefault();
+								break;
+						}
+					})
 				},
 				historyChange: function (index, item) {
 					history.pushState({url: '/?id=' + (index), page: (index)}, 'New Page', '/?id=' + (index));
