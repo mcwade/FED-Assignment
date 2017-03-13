@@ -6,7 +6,7 @@
 			navParent,
 			caroItems,
 			navItems,
-			prevIndex = 1,
+			prevIndex = 0,
 			windowWidth,
 			_myHandler = {
 				init: function() {
